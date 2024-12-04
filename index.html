@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+
+    <title>Lista de Compras</title>
+</head>
+<body>
+    <div id="page">
+        <div id="logo-wrapper">
+            <img src="assets/images/Vector.svg" alt="Logo">
+            <h1>quicklist</h1>
+        </div>
+        <a id="back-wrapper" href="#">
+            <img src="assets/icons/arrow-left.svg" alt="Left Arrow Icon">
+            <span>Voltar</span>
+        </a>
+
+        <main class="flex-column">
+            <h2>Compras da Semana</h2>
+
+            <div class="new-item-wrapper">
+                <input type="text" name="newItem" id="new-item" placeholder="Adicione um novo item">
+                <button type="button">Adicionar item</button>
+            </div>
+
+            <div class="items-list-wrapper">
+                <!-- <div class="box-model-wrapper item-wrapper">
+                    <input type="checkbox" name="item" class="item-checkbox">
+                    <span>Pão Francês</span>
+                    <div class="trash-button-wrapper">
+                        <button type="" id="trash-button"></button>
+                        <label for="trash-button">
+                            <img src="assets/icons/trash.svg" alt="Trash icon">
+                        </label>
+                    </div> -->
+                </div>
+                
+            </div>
+
+            <div class="box-model-wrapper remove-item-message">
+                <img src="assets/icons/warning-circle-filled.svg" alt="Warning circle icon">
+                <span>O item foi removido da lista</span>
+                <div class="close-message-wrapper">
+                    <button type="button" id="close-message" class="close-message"></button>
+                    <label for="close-message">
+                        <img src="assets/icons/delete-small.svg" alt="Delete icon">
+                    </label>
+                </div>
+            </div>
+        </main>
+
+        <script src="scripts/script.js"></script>
+    </div>
+</body>
+</html>

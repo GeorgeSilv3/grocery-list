@@ -1,0 +1,57 @@
+@import url(itemsList.css);
+main{
+    width: 100%;
+
+    & h2{
+        display: block;
+        font: var(--title);
+        color: var(--content-primary);
+        margin-bottom: 2.75rem;
+    }
+}
+
+.new-item-wrapper{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 1rem;
+    margin-bottom: 2.5rem;
+
+    * {
+        border-radius: .75rem;
+    }
+
+    & input{
+        height: 2.75rem;
+        background-color: var(--background-secondary);
+        border: 1px solid var(--border-primary);
+        padding-inline: 1.125rem;
+
+        &:hover{
+            border-color: var(--border-hover);
+        }
+
+        &:focus{
+            border-color: var(--color-brand);
+        }
+
+        &::placeholder{
+            color: var(--content-tertiary);
+            font: var(--paragraph);
+            font-weight: 400;
+        }
+    }
+
+    & button{
+        appearance: none;
+        background-color: var(--color-brand);
+        color: var(--always-white);
+        font: var(--label);
+        border: none;
+        cursor: pointer;
+
+        &:hover{
+            background-color: var(--color-brand-hover);
+        }
+    }
+}

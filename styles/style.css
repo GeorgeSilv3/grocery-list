@@ -1,0 +1,11 @@
+@import url(global.css);
+@import url(header.css);
+@import url(main.css);
+
+#page{
+    margin-inline: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 39.18rem;
+}
