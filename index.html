@@ -24,23 +24,12 @@
 
         <main class="flex-column">
             <h2>Compras da Semana</h2>
-
-            <div class="new-item-wrapper">
-                <input type="text" name="newItem" id="new-item" placeholder="Adicione um novo item">
-                <button type="button">Adicionar item</button>
-            </div>
+                <form class="new-item-wrapper">
+                    <input type="text" name="newItem" id="new-item" placeholder="Adicione um novo item">
+                <button type="submit">Adicionar item</button>
+                </form>
 
             <div class="items-list-wrapper">
-                <!-- <div class="box-model-wrapper item-wrapper">
-                    <input type="checkbox" name="item" class="item-checkbox">
-                    <span>Pão Francês</span>
-                    <div class="trash-button-wrapper">
-                        <button type="" id="trash-button"></button>
-                        <label for="trash-button">
-                            <img src="assets/icons/trash.svg" alt="Trash icon">
-                        </label>
-                    </div> -->
-                </div>
                 
             </div>
 
@@ -48,9 +37,9 @@
                 <img src="assets/icons/warning-circle-filled.svg" alt="Warning circle icon">
                 <span>O item foi removido da lista</span>
                 <div class="close-message-wrapper">
-                    <button type="button" id="close-message" class="close-message"></button>
+                    <button onclick="removeMessage()" type="button" id="close-message" class="close-message"></button>
                     <label for="close-message">
-                        <img src="assets/icons/delete-small.svg" alt="Delete icon">
+                        <img id="" src="assets/icons/delete-small.svg" alt="Delete icon">
                     </label>
                 </div>
             </div>

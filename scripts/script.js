@@ -1,55 +1,43 @@
-const itemsListWrapper = document.querySelector(".items-list-wrapper");
+const itemsListWrapper = document.querySelector(".items-list-wrapper");7
+const form = document.querySelector("form");
 const addItem = document.querySelector(".new-item-wrapper button");
 const inputItem = document.querySelector("#new-item");
-// const trashButton = document.querySelector("#trash")
+const removeItemMessage = document.getElementsByClassName("remove-item-message");
+
+let elementsDeletable = [];
 
 function elementCreator(id){
     const itemWrapper = document.createElement("div");
     itemWrapper.classList.add("box-model-wrapper", "item-wrapper");
 
-    const checkOnItem = document.createElement("input");
-    checkOnItem.type = "checkbox";
-    checkOnItem.name = "item";
+    itemWrapper.innerHTML = `<input type="checkbox" name="item" class="item-checkbox"><span>${inputItem.value}</span><div class="trash-button-wrapper"><button class="trashButton"></button><label for="trash-button"><img src="assets/icons/trash.svg" id="${id}"></label></div>`
 
-    const nameItem = document.createElement("span");
-    nameItem.textContent = inputItem.value;
-
-    const trashButtonWrapper = document.createElement("div");
-
-    const trashButton = document.createElement("button");
-    trashButton.id = id;
-
-    const labelTrash = document.createElement("label");
-    labelTrash.setAttribute("for", id);
-    
-
-    const trashIcon = document.createElement("img");
-    trashIcon.src = "assets/icons/trash.svg";
-
-    itemWrapper.appendChild(checkOnItem);
-    itemWrapper.appendChild(nameItem);
-    itemWrapper.appendChild(trashButtonWrapper);
-    checkOnItem.classList.add("item-checkbox");
-    trashButtonWrapper.classList.add("trash-button-wrapper");
-    trashButtonWrapper.appendChild(trashButton);
-    trashButtonWrapper.appendChild(labelTrash);
-    labelTrash.setAttribute("for", "trash-button");
-    labelTrash.appendChild(trashIcon);
-
+    elementsDeletable.push(id);
+    console.log(itemWrapper.innerHTML);
     return itemWrapper;
 }
 
-function removeElement(element){
-    element.remove();
+function removeMessage (){removeItemMessage[0].style.display = "none";}
+
+
+
+form.onsubmit = (e) => {
+    e.preventDefault();
+    // e.timeStamp - Time click, giving a ID specifc to each click
+    itemsListWrapper.appendChild(elementCreator(e.timeStamp));7
+    inputItem.value = "";
 }
 
-addItem.onclick = (e) => {
-    // e.timeStamp - Tempo do click, gerando um id único para cada elemento.
-    itemsListWrapper.appendChild(elementCreator(e.timeStamp));
-}
+addEventListener("click", (e) => {
+    const idToRemove = e.target.id;
+    if (elementsDeletable.includes(Number(idToRemove))){
+        document.getElementById(idToRemove).parentElement.parentElement.parentElement.remove(); //Verify how to do better
+        removeItemMessage[0].style.display = "flex";
+    } 
+    if (e.target.id == document.getElementById("close-message")){
 
-// Verificar como fazer para deletar: Talvez chamando o elemento pai e usando uma condicional para verificar sem ele possui algum filho com determiado ID.
-trashButton.onclick = (e) => {
-    console.log(e.id);
-}
+    }
+})
+
+
 
