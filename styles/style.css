@@ -9,3 +9,9 @@
     align-items: center;
     width: 39.18rem;
 }
+
+@media screen and (max-width: 39.18rem){
+    #page{
+        width: 90vw;
+    }
+}
